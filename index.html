@@ -1,97 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FADIXO TECHNOLOGY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
-  margin:0;
-  background:black;
+  background: black;
+  color: white;
+  margin: 0;
   font-family: Arial, sans-serif;
-  overflow:hidden;
 }
 
-/* 1. SPLASH SCREEN - shows first */
+/* SPLASH SCREEN */
 #splash {
   position: fixed;
-  top:0; left:0;
-  width:100%;
-  height:100vh;
-  background:black;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index: 1000;
-  transition: opacity 0.8s ease;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 #splash img {
-  width: 220px;
-  animation: popUp 1.2s ease;
+  width: 180px;
+  animation: pulse 1.5s infinite;
 }
-
-@keyframes popUp {
-  0% { transform: scale(0); opacity:0; }
-  60% { transform: scale(1.15); opacity:1; }
-  80% { transform: scale(0.95); }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
 
-/* 2. MAIN PAGE - hidden at first */
+/* MAIN CONTENT - BIG BOLD CENTRALIZE */
 #main {
-  display:none;
-  min-height:100vh;
-  background:black;
-  color:white;
-  text-align:center;
+  display: none;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.header {
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
+#main img { width: 150px; margin-bottom: 20px; }
+#main h1 {
+  font-size: 32px;
+  font-weight: 900;
+  max-width: 90%;
+  line-height: 1.3;
 }
-.btn {
-  background:#00e5ff;
-  color:black;
-  padding:12px 28px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
+#main p { color: #aaa; margin-bottom: 25px; }
+#main button {
+  background: #00C2FF;
+  color: black;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
 }
 </style>
 </head>
 <body>
 
-<!-- SPLASH SCREEN -->
 <div id="splash">
-  <img src="fadixo logo.png" alt="FADIXO">
+  <img src="logo.png" alt="Fadixo">
 </div>
 
-<!-- MAIN PAGE -->
 <div id="main">
-  <div class="header">
-    <div>FADIXO TECHNOLOGY</div>
-    <div><a href="login.html" style="color:white; text-decoration:none; margin-right:15px;">Login</a> <a href="signup.html" class="btn">Sign Up</a></div>
-  </div>
-
-  <div style="margin-top:80px;">
-    <img src="fadixo logo.png" style="width:180px;">
-    <h1>Sign up to Fadixo Technology to get<br>the best website for your company.</h1>
-    <p style="color:#aaa;">Professional, fast and affordable web solutions.</p>
-    <br>
-    <a href="signup.html" class="btn">Get Started</a>
-  </div>
+  <img src="logo.png" alt="FT Logo">
+  <h1>Sign up to Fadixo Technology to get the best website for your company.</h1>
+  <p>Professional, fast and affordable web solutions.</p>
+  <button>Get Started</button>
 </div>
 
 <script>
-// After 2.5 seconds, hide splash and show main
-setTimeout(function(){
-  document.getElementById('splash').style.opacity = '0';
   setTimeout(function(){
     document.getElementById('splash').style.display = 'none';
-    document.getElementById('main').style.display = 'block';
-    document.body.style.overflow = 'auto';
-  }, 800);
-}, 2500); // change 2500 to 4000 if you want longer like WhatsApp
+    document.getElementById('main').style.display = 'flex';
+  }, 2500); // 2.5 seconds splash
 </script>
 
 </body>
-</html>
+</html>s
